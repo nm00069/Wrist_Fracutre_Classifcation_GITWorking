@@ -1,11 +1,4 @@
-from google.colab import drive
-drive.mount('/gdrive')
-%cd /gdrive/MyDrive/Fracture_Dataset/
-
 import os
-
-
-
 import streamlit as st
 from PIL import Image
 from keras.preprocessing.image import load_img,img_to_array
