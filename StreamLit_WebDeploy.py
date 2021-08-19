@@ -1,10 +1,18 @@
+from google.colab import drive
+drive.mount('/gdrive')
+%cd /gdrive/MyDrive/Fracture_Dataset/
+
+import os
+
+
+
 import streamlit as st
 from PIL import Image
 from keras.preprocessing.image import load_img,img_to_array
 import numpy as np
 from keras.models import load_model
 
-model = load_model('Vgg19TF.h5',compile=False)
+model = load_model('gdrive/MyDrive/Fracture_Dataset/Vgg19TF.h5',compile=False)
 lab = {0: 'Normal', 1: 'Fracture'}
 def processed_img(img_path):
     img=load_img(img_path,target_size=(224,224,3))
